@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作室主页</title>
+    <style>
+        body {
+            font-family: '宋体', serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #800000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #b22222;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #8b0000;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #800000;
+            padding-bottom: 10px;
+        }
+        footer {
+            background-color: #800000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #b22222;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #8b0000;
+        }
+        .social-media a {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .social-media a:hover {
+            color: #8b0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>工作室名称</h1>
+    </header>
+    <nav>
+        工作室简介
+        商品简介
+        联系方式
+    </nav>
+    <section id="about" class="container">
+        <h2>工作室简介</h2>
+        <p>在这里，您可以介绍工作室的历史、宗旨、以及您提供的服务或产品。可以包括一些图片或视频，以更好地展示工作室的特点。</p >
+        <video controls width="100%">
+            <source src="your-video-url.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 视频标签。
+        </video>
+    </section>
+    <section id="products" class="container">
+        <h2>商品简介</h2>
+        <p>介绍您提供的商品，详细描述其特点和优势。可以使用轮播图展示不同的商品。</p >
+        <div id="carousel" style="position: relative; max-width: 100%; margin: auto;">
+            < img src="your-image1.jpg" style="width:100%">
+            < img src="your-image2.jpg" style="width:100%">
+            < img src="your-image3.jpg" style="width:100%">
+        </div>
+        <script>
+            var carouselIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.querySelectorAll("#carousel img");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                carouselIndex++;
+                if (carouselIndex > x.length) {carouselIndex = 1}    
+                x[carouselIndex-1].style.display = "block";  
+                setTimeout(carousel, 3000); // 更改图片间隔时间
+            }
+        </script>
+    </section>
+    <section id="contact" class="container">
+        <h2>联系方式</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="您的名字" required>
+            <input type="email" placeholder="您的邮箱" required>
+            <textarea placeholder="您的留言" rows="5" required></textarea>
+            <button type="submit">发送</button>
+        </div>
+        <div class="social-media">
+            <h3>关注我们</h3>
+            
+            
+            
+            
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 工作室名称. 版权所有.</p >
+    </footer>
+</body>
+</html>
